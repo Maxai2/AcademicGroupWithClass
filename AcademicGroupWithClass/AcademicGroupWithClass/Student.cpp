@@ -36,4 +36,4 @@ void Student::setPhone(string phone) { this->phone = phone; }
 
 void Student::setAge(int age) { this->age = age; }
 
-void Student::getAvarage(double avarage) { this->avarage = avarage; }
+void Student::setAvarage(double avarage) { this->avarage = avarage; }

@@ -27,5 +27,5 @@ public:
 	void setSurname(string surname);
 	void setPhone(string phone);
 	void setAge(int age);
-	void getAvarage(double avarage);
+	void setAvarage(double avarage);
 };
