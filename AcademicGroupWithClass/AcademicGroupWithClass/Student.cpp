@@ -15,7 +15,7 @@ Student::Student(string name, string surname, int age, string phone, double aver
 	this->surname = surname;
 	this->age = age;
 	this->phone = phone;
-	this->average;
+	this->average = average;
 }
 
 string Student::getName() { return this->name; }

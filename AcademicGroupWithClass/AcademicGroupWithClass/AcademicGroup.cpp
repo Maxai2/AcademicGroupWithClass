@@ -48,6 +48,8 @@ void AcademyGroup::AddStudent()
 
 void AcademyGroup::DeleteStudent()
 {
+	cout << endl;
+
 	int index = 0;
 	bool del = false;
 	cout << "Input index of student for delete: ";
@@ -81,9 +83,10 @@ void AcademyGroup::DeleteStudent()
 
 void AcademyGroup::EditStudent()
 {
+	cout << endl;
+
 	int index = 0;
 	string temp;
-	double average;
 	cout << "Input index of student for edit: ";
 	cin >> index;
 	index--;
@@ -95,14 +98,14 @@ void AcademyGroup::EditStudent()
 	cout << this->student[index]->getPhone() << '\t';
 	cout << this->student[index]->getAverage() << '\t' << endl;
 
-	cout << "What u want to edit?"
+	cout << "\nWhat u want to edit?"
 			"\n1.Surname"
 			"\n2.Name"
 			"\n3.Age"
 			"\n4.Phone"
 			"\n5.Average";
 
-	cout << "Your select: ";
+	cout << "\n\nYour select: ";
 	int sel = 0;
 	cin >> sel;
 
@@ -139,9 +142,9 @@ void AcademyGroup::EditStudent()
 	case 5:
 		cout << "Old average: " << this->student[index]->getAverage() << endl;
 		cout << "New average: ";
-		cin >> average;
+		cin >> temp;
 
-		this->student[index]->setAverage(average);
+		this->student[index]->setAverage(stod(temp));
 	}
 }
 
@@ -149,7 +152,7 @@ void AcademyGroup::Print()
 {
 	cout << endl;
 	for (int i = 0; i < this->count; i++)
-		//printf("%s \t %s \t %i \t %s \t %1.0d", this->student[i]->getSurname(), this->student[i]->getName(), this->student[i]->getAge(), this->student[i]->getPhone(), this->student[i]->getAverage());
+//		printf("%s \t %s \t %i \t %s \t %1.0d", this->student[i]->getSurname(), this->student[i]->getName(), this->student[i]->getAge(), this->student[i]->getPhone(), this->student[i]->getAverage());
 	{
 		cout << i + 1 << ".";
 		cout << this->student[i]->getSurname() << '\t';
@@ -162,6 +165,7 @@ void AcademyGroup::Print()
 
 void AcademyGroup::FindStudent()
 {
+	cout << endl;
 	cout << "Write by which param u want to search:"
 		"\n 1.Surname"
 		"\n 2.Name"
@@ -169,17 +173,78 @@ void AcademyGroup::FindStudent()
 		"\n 4.Phone"
 		"\n 5.Average";
 
-	string answer;
-	cout << "May be one or more like(1, 1.2): ";
+	int answer;
+	cout << "\n\nBy ";
 	cin >> answer;
 
+	string find;
+	cout << "What we search ";
+	cin >> find;
 
+	for (int i = 0; i < this->count; i++)
+	{
+		switch (answer)
+		{
+		case 1:
+			if (find == this->student[i]->getSurname())
+			{
+				cout << this->student[i]->getSurname() << '\t';
+				cout << this->student[i]->getName() << '\t';
+				cout << this->student[i]->getAge() << '\t';
+				cout << this->student[i]->getPhone() << '\t';
+				cout << this->student[i]->getAverage() << '\t';
+			}
+			break;
+		case 2:
+			if (find == this->student[i]->getName())
+			{
+				cout << this->student[i]->getSurname() << '\t';
+				cout << this->student[i]->getName() << '\t';
+				cout << this->student[i]->getAge() << '\t';
+				cout << this->student[i]->getPhone() << '\t';
+				cout << this->student[i]->getAverage() << '\t';
+			}
+			break;
+		case 3:
+			if (stoi(find) == this->student[i]->getAge())
+			{
+				cout << this->student[i]->getSurname() << '\t';
+				cout << this->student[i]->getName() << '\t';
+				cout << this->student[i]->getAge() << '\t';
+				cout << this->student[i]->getPhone() << '\t';
+				cout << this->student[i]->getAverage() << '\t';
+			}
+			break;
+		case 4:
+			if (find == this->student[i]->getPhone())
+			{
+				cout << this->student[i]->getSurname() << '\t';
+				cout << this->student[i]->getName() << '\t';
+				cout << this->student[i]->getAge() << '\t';
+				cout << this->student[i]->getPhone() << '\t';
+				cout << this->student[i]->getAverage() << '\t';
+			}
+			break;
+		case 5:
+			if (stod(find) == this->student[i]->getAverage())
+			{
+				cout << this->student[i]->getSurname() << '\t';
+				cout << this->student[i]->getName() << '\t';
+				cout << this->student[i]->getAge() << '\t';
+				cout << this->student[i]->getPhone() << '\t';
+				cout << this->student[i]->getAverage() << '\t';
+			}
+			break;
+		default:
+			cout << "Student not found!" << endl;
+		}
+	}
 }
 
 void AcademyGroup::Sort()
 {
 	bool sorted = false;
-	Student *temp = new Student;
+	Student *temp;
 	int counter = 0;
 
 	for (int i = 1; !sorted; i++)
@@ -199,10 +264,8 @@ void AcademyGroup::Sort()
 		else
 		if (i == this->count - 1)
 		{
-			i = 1;
+			i = 0;
 			counter = 0;
 		}
 	}
-
-//	delete temp;
 }

@@ -6,14 +6,21 @@ using namespace std;
 
 void main()
 {
-	//AcademyGroup A;
+	AcademyGroup A;
 
-	//A.AddStudent();
-	//A.AddStudent();
-	//A.AddStudent();
 	//A.Print();
 	//A.Sort();
 	//A.Print();
+
+	A.AddStudent();
+	A.AddStudent();
+	A.AddStudent();
+	A.Print();
+	A.Sort();
+	A.Print();
+	A.EditStudent();
+	A.Print();
+	A.FindStudent();
 
 	//A.DeleteStudent();
 	//A.Print();
