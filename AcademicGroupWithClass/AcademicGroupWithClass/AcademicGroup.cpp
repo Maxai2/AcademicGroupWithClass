@@ -81,12 +81,68 @@ void AcademyGroup::DeleteStudent()
 
 void AcademyGroup::EditStudent()
 {
-	//int index = 0;
-	//cout << "Input index of student for edit: ";
-	//cin >> index;
-	//index--;
+	int index = 0;
+	string temp;
+	double average;
+	cout << "Input index of student for edit: ";
+	cin >> index;
+	index--;
 
+	cout << endl;
+	cout << this->student[index]->getSurname() << '\t';
+	cout << this->student[index]->getName() << '\t';
+	cout << this->student[index]->getAge() << '\t';
+	cout << this->student[index]->getPhone() << '\t';
+	cout << this->student[index]->getAverage() << '\t' << endl;
 
+	cout << "What u want to edit?"
+			"\n1.Surname"
+			"\n2.Name"
+			"\n3.Age"
+			"\n4.Phone"
+			"\n5.Average";
+
+	cout << "Your select: ";
+	int sel = 0;
+	cin >> sel;
+
+	switch (sel)
+	{
+	case 1:
+		cout << "Old surname: " << this->student[index]->getSurname() << endl;
+		cout << "New surname: ";
+		cin >> temp;
+
+		this->student[index]->setSurname(temp);
+		break;
+	case 2:
+		cout << "Old name: " << this->student[index]->getName() << endl;
+		cout << "New name: ";
+		cin >> temp;
+
+		this->student[index]->setName(temp);
+		break;
+	case 3:
+		cout << "Old age: " << this->student[index]->getAge() << endl;
+		cout << "New age: ";
+		cin >> temp;
+
+		this->student[index]->setAge(stoi(temp));
+		break;
+	case 4:
+		cout << "Old phone: " << this->student[index]->getPhone() << endl;
+		cout << "New phone: ";
+		cin >> temp;
+
+		this->student[index]->setPhone(temp);
+		break;
+	case 5:
+		cout << "Old average: " << this->student[index]->getAverage() << endl;
+		cout << "New average: ";
+		cin >> average;
+
+		this->student[index]->setAverage(average);
+	}
 }
 
 void AcademyGroup::Print()
@@ -106,6 +162,17 @@ void AcademyGroup::Print()
 
 void AcademyGroup::FindStudent()
 {
+	cout << "Write by which param u want to search:"
+		"\n 1.Surname"
+		"\n 2.Name"
+		"\n 3.Age"
+		"\n 4.Phone"
+		"\n 5.Average";
+
+	string answer;
+	cout << "May be one or more like(1, 1.2): ";
+	cin >> answer;
+
 
 }
 
