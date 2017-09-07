@@ -10,22 +10,22 @@ class Student
 	string surname;
 	int age;
 	string phone;
-	double avarage;
+	double average;
 
 public:
 	Student();
-	Student(string name, string surname, int age, string phone, double avarage);
+	Student(string name, string surname, int age, string phone, double average);
 
-	~Student() { cout << "Delete student" << endl; }
+	~Student() { /*cout << "Delete student" << endl;*/ }
 
 	string getName();
 	string getSurname(); 
 	int getAge();
-	double getAvarage();
+	double getAverage();
 	string getPhone();
 	void setName(string name);
 	void setSurname(string surname);
 	void setPhone(string phone);
 	void setAge(int age);
-	void setAvarage(double avarage);
+	void setAverage(double average);
 };
