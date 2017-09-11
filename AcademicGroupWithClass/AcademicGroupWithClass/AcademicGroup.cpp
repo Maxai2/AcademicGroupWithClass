@@ -3,7 +3,7 @@
 AcademyGroup::AcademyGroup()
 {
 	this->student = nullptr;
-	count = 0;
+	this->count = 0;
 }
 
 void AcademyGroup::AddStudent()
